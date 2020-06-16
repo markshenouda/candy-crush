@@ -1,0 +1,228 @@
+/* MIT License
+
+Copyright (c) 2020 Mark Sameh Abdalla Shenouda
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+
+html {
+height: 100%;
+}
+
+body {
+background-image: url('assets/background.svg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+height: 100%;
+margin: 0;
+font-family: 'Changa', sans-serif;
+}
+
+#play-btn {
+font-size: 35px;
+width: 300px;
+}
+
+#pause-btn {
+font-size: 15px;
+width: 200px;
+height: 50px;
+}
+
+
+
+.score {
+color: white;
+margin-bottom: 20px;
+font-size: 20px;
+width: 160px;
+height: 150px;
+background-color: rgb(167, 40, 105);
+border-radius: 50px;
+text-align: center;
+padding-top: 10px;
+border: 20px solid hotpink;
+}
+
+.score span {
+font-size: 40px;
+}
+
+.button {
+padding: 15px 25px;
+text-align: center;
+cursor: pointer;
+outline: none;
+color: #fff;
+background-color: #4CAF50;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+font-family: 'Changa', sans-serif;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+.hide {
+display: none;
+}
+
+
+.scene {
+height: 100%;
+}
+
+.grid {
+height: 88vmin;
+width: 88vmin;
+border: 20px solid rgb(214, 72, 143);
+border-radius: 15px;
+display: flex;
+flex-wrap: wrap;
+background-color: rgb(189, 25, 120);
+}
+
+.grid div {
+height: 11vmin;
+width: 11vmin;
+cursor: pointer;
+background-size: cover;
+}
+
+
+
+.switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
+
+.switch input { 
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+
+.footer {
+background-color: rgb(255, 21, 185);
+width: fit-content;
+padding: 10px;
+border-radius: 20px;
+font-size: 20px;
+margin-top: 50px;
+color: white;
+}
+
+.footer a{
+color: white;
+}
+
+.selected {
+height: 10vmin!important;
+width: 10vmin!important;
+border: 0.5vmin solid greenyellow!important;
+border-radius: 1vmin;
+background-size: cover;
+}
+
+.game-container {
+display: flex;
+align-items: center;
+height: 100%;
+flex-direction: row;
+justify-content: space-around;
+}
+
+.control-panel {
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 90%;
+}
+
+@media only screen and (max-width: 800px) {
+.game-container {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.control-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: fit-content;
+}	
+}
